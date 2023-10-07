@@ -7,14 +7,18 @@
 @import "link.css";
 
 :root {
-    
+
     --window-background-color: #396B9A;
+    --window-opacity: .9;
 
     --carrousel-option-background-color: #396B9A;
     --carrousel-option-background-color-hover: #447cb1;
-    --carrousel-option-background-opacity: .75;
+    --carrousel-option-background-opacity: .8;
     --carrousel-option-width: 25vw;
-    --carrousel-option-height: 250px;
+    --carrousel-option-height: 300px;
+
+    --station-background-color: #1d5284;
+    --station-background-color-hover: #13497b;
 
 }
 

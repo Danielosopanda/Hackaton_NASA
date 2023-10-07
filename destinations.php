@@ -1,4 +1,5 @@
 <?php 
+
     require_once "conexion.php";
 
     $destinationQuery = "SELECT * FROM Destino;";
@@ -25,7 +26,7 @@
         <a href="stations.php?idDestination=<?php echo $destination->idDestino; ?>" class="link">
             <div class="carrousel-option">
                 <img 
-                src="Images/<?php echo $destination->nombreDestino; ?>" 
+                src="./Images/Destinations/<?php echo $destination->nombreDestino; ?>.png" 
                 alt="<?php echo $destination->nombreDestino; ?>" 
                 class="carrousel-option__img"
                 >

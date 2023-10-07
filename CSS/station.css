@@ -1,0 +1,51 @@
+.stations-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+}
+
+.station__list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.station {
+    background: var(--station-background-color);
+    padding: 1.25rem;
+    margin: .5rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 200ms ease background;
+    opacity: 1;
+    z-index: 2;
+}
+
+.station:hover {
+    background: var(--station-background-color-hover);
+    opacity: 1;
+}
+
+.station__name {
+    font-size: 20px;
+}
+
+.station__description {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.stations-container__right {
+    display: grid;
+    grid-template-rows: 4fr 6fr;
+}
+
+.station-destination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--station-background-color);
+    margin: .5rem;
+    border-radius: 4px;
+}

@@ -1,3 +1,8 @@
 .window {
     background: var(--window-background-color);
+    padding: 2rem;
+    opacity: var(--window-opacity);
+    width: 90vw;
+    height: 90vh;
+    border-radius: 4px;
 }
