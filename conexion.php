@@ -2,7 +2,7 @@
     $host = "root";
     $pass = "";
     $server = "localhost";
-    $db = "Laboratorio_Electronica";
+    $db = "Hackaton_Nasa";
 
     $conexion = new mysqli($server, $host, $pass, $db);
 

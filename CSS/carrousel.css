@@ -1,0 +1,27 @@
+.carrousel {
+    display: flex;
+    overflow-x: scroll;
+    max-width: 80vw;
+    padding: 1rem 0;
+}
+
+.carrousel-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--carrousel-option-background-color);
+    opacity: var(--carrousel-option-background-opacity);
+    min-width: var(--carrousel-option-width);
+    height: var(--carrousel-option-height);
+    padding: 2rem;
+    cursor: pointer;
+    transition: 200ms ease all;
+    margin: 0 1rem;
+    border-radius: 2px;
+}
+
+.carrousel-option:hover {
+    background: var(--carrousel-option-background-color-hover);
+}
+

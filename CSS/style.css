@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+@import "container.css";
+@import "window.css";
+@import "station.css";
+@import "carrousel.css";
+@import "link.css";
+
+:root {
+    
+    --window-background-color: #396B9A;
+
+    --carrousel-option-background-color: #396B9A;
+    --carrousel-option-background-color-hover: #447cb1;
+    --carrousel-option-background-opacity: .75;
+    --carrousel-option-width: 25vw;
+    --carrousel-option-height: 250px;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', Arial;
+    color: white;
+}
+
+body {
+    overflow: hidden;
+}
