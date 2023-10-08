@@ -2,7 +2,9 @@
 
     require_once "conexion.php";
 
-    $destinationQuery = "SELECT * FROM Destino;";
+    $user = 1;
+
+    $destinationQuery = "SELECT * FROM Destino ORDER BY ordenDestino;";
     $destinations = $conexion->query($destinationQuery);
 
 ?>
@@ -17,25 +19,31 @@
 </head>
 <body>
 <div class="container container--destinations">
-    <h1 class="container__title">Destinations</h1>
-    <img src="./Images/carrousel-background.jpg" alt="" class="container__background-img">
-    <div class="carrousel">
-    <?php 
-        while($destination = $destinations->fetch_object()) {
-    ?>
-        <a href="stations.php?idDestination=<?php echo $destination->idDestino; ?>" class="link">
-            <div class="carrousel-option">
-                <img 
-                src="./Images/Destinations/<?php echo $destination->nombreDestino; ?>.png" 
-                alt="<?php echo $destination->nombreDestino; ?>" 
-                class="carrousel-option__img"
-                >
-                <h2 class="carrousel-option__title"><?php echo $destination->nombreDestino; ?></h2>
-            </div>  
-        </a>
-    <?php 
-        }  
-    ?>
+    <!-- Background video -->
+    <video src="./Videos/Space_1.mp4" class="video container__background-img" autoplay muted loop></video>
+    <div class="window">
+        <h1 class="window__title">Destinations</h1>
+        <div class="profile">
+            
+        </div>
+        <div class="grid">
+            <?php 
+                while($destination = $destinations->fetch_object()) {
+            ?>
+                <a href="stations.php?idDestination=<?php echo $destination->idDestino; ?>" class="link">
+                    <div class="grid-option">
+                        <img 
+                        src="./Images/Destinations/<?php echo $destination->nombreDestino; ?>.png" 
+                        alt="<?php echo $destination->nombreDestino; ?>" 
+                        class="grid-option__img"
+                        >
+                        <h2 class="carrousel-option__title"><?php echo $destination->nombreDestino; ?></h2>
+                    </div>  
+                </a>
+            <?php 
+                }  
+            ?>
+        </div>
     </div>
 </div>
 </body>

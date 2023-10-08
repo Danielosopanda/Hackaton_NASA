@@ -10,10 +10,6 @@
     color: var(--font-color);
 }
 
-.container-title {
-    text-align: center;
-}
-
 
 .container__background-img {
     position: absolute;
@@ -21,4 +17,8 @@
     left: 0;
     width: 100%;
     z-index: -1;
+}
+
+.container__background-img--dark {
+    filter: brightness(.4);
 }

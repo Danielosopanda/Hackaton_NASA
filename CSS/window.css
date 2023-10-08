@@ -1,8 +1,10 @@
 .window {
+    position: relative;
     background: var(--window-background-color);
-    padding: 2rem;
+    padding: 1rem 2rem 2rem;
     opacity: var(--window-opacity);
     width: 90vw;
     height: 90vh;
     border-radius: 4px;
+    overflow: hidden;
 }

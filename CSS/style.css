@@ -2,25 +2,30 @@
 
 @import "container.css";
 @import "window.css";
+@import "profile.css";
 @import "station.css";
-@import "carrousel.css";
+@import "grid.css";
 @import "link.css";
+@import "form.css";
 
 :root {
 
     --window-background-color: #396B9A;
     --window-opacity: .9;
 
-    --carrousel-option-background-color: #396B9A;
-    --carrousel-option-background-color-hover: #447cb1;
-    --carrousel-option-background-opacity: .8;
-    --carrousel-option-width: 25vw;
-    --carrousel-option-height: 300px;
+    --grid-option-background-color: #1d5284;
+    --grid-option-background-color-hover: #13497b;
+    --grid-option-background-opacity: .9;
+    --grid-option-width: 25vw;
+    --grid-option-height: 300px;
 
     --station-background-color: #1d5284;
     --station-background-color-hover: #13497b;
    
-    --font-color: #cae6ff;
+    --font-color: #d3eaff;
+
+    --return-button-background-color: #d3eaff;
+    --return-button-font-color: #1d5284;
 
 }
 
@@ -29,6 +34,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', Arial;
+    scroll-behavior: smooth;
 }
 
 body {
