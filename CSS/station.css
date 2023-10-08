@@ -27,8 +27,7 @@
 
 .station:hover {
     background: var(--font-color);
-    color: #396B9A;
-    /* opacity: 1; */
+    color: #396B9A; 
 }
 
 .station--locked {

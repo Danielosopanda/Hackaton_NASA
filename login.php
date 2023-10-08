@@ -1,7 +1,9 @@
 <?php 
     require_once "conexion.php";
 
-    
+    if(isset($_POST['loginBtn'])) {
+
+    }
     
 ?>
 
@@ -19,19 +21,19 @@
     <!-- Background video -->
     <video id="stationBackgroundVideo" src="./Videos/Space_3.mp4" class="video container__background-img container__background-img--dark" autoplay muted loop></video>
 
-    <form class="window window--login form form--login">
+    <form class="window window--login form form--login" action="#" method="POST">
         <!-- Title -->
         <h1 class="form__title">Login</h1>
 
         <div class="form__field">
             <label for="" class="form__label">Universal Population Identificator (UPI)</label>
-            <input type="text" class="form__input" maxlength=8>
+            <input type="text" class="form__input form__input--uppercase" maxlength=8>
         </div>
         <div class="form__field">
             <label for="" class="form__label">Password</label>
             <input type="password" class="form__input">
         </div>
-        <button class="button button--confirm button--form" type="submit">Login</button>
+        <button name="loginBtn" class="button button--confirm button--form" type="submit">Login</button>
     </form>
 </div>
 </body>

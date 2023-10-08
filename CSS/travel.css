@@ -1,0 +1,16 @@
+.travel-container {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.travel {
+    background: var(--station-background-color);
+    margin: .5rem 0;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.travel__text {
+    font-weight: normal;
+    font-size: 16px;
+}

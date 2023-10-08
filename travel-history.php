@@ -25,22 +25,23 @@
     <div class="window">
         <h1 class="window__title">Travel history</h1>
 
-        <?php 
-            while($viaje = $viajes->fetch_object()) {
-                        
-        ?>
+        <div class="travel-container">
+            <?php 
+                while($viaje = $viajes->fetch_object()) {
+                            
+            ?>
 
-            <div class="travel">
-                <h2 class="travel__destination"><?php echo $viaje->nombreDestino; ?></h2>
-                <h3 class="travel__station">Departure station: <?php echo $viaje->nombreEstacion; ?></h3>
-                <h3 class="travel__date">Arrival station: <?php echo $viaje->estacionOrigenViaje; ?></h3>
-                <h3 class="travel__date">Date: <?php echo $viaje->fechaViaje; ?></h3>
-            </div>  
-                                
-        <?php 
-            }
-
-        ?>
+                <div class="travel">
+                    <h2 class="travel__title travel__destination"><?php echo $viaje->nombreDestino; ?></h2>
+                    <h3 class="travel__text travel__station">Departure station: <?php echo $viaje->nombreEstacion; ?></h3>
+                    <h3 class="travel__text travel__date">Arrival station: <?php echo $viaje->estacionOrigenViaje; ?></h3>
+                    <h3 class="travel__text travel__date">Date: <?php echo $viaje->fechaViaje; ?></h3>
+                </div>  
+                                    
+            <?php 
+                }
+            ?>
+        </div>
 
     </div>
 </div>
