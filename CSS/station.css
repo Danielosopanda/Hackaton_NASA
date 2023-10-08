@@ -11,6 +11,7 @@
 }
 
 .station {
+    color: var(--font-color);
     background: var(--station-background-color);
     padding: 1.25rem;
     margin: .5rem 0;
@@ -18,12 +19,13 @@
     cursor: pointer;
     transition: 200ms ease background;
     opacity: 1;
-    z-index: 2;
+    z-index: 1;
 }
 
 .station:hover {
-    background: var(--station-background-color-hover);
-    opacity: 1;
+    background: var(--font-color);
+    color: #396B9A;
+    /* opacity: 1; */
 }
 
 .station__name {
@@ -48,4 +50,18 @@
     background: var(--station-background-color);
     margin: .5rem;
     border-radius: 4px;
+    padding: 1rem;
+}
+
+.station-destination__img {
+    width: 100%;
+}
+
+.station-destination__name {
+    font-size: 22px;
+}
+
+.station-destination__detail {
+    font-size: 15px;
+    font-weight: normal;
 }

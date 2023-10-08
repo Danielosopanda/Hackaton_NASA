@@ -42,8 +42,13 @@
             </div>
             <div class="stations-container__right">
                 <div class="station-destination">
-                    <img src="./Images/Destinations/<?php echo $destination->nombreDestino; ?>" alt="<?php echo $destination->nombreDestino; ?>" class="img img--destination">
+                    <img src="./Images/Destinations/<?php echo $destination->nombreDestino; ?>.png" alt="<?php echo $destination->nombreDestino; ?>" class="img station-destination__img">
                     <h3 class="station-destination__name"><?php echo $destination->nombreDestino; ?></h3>
+                    <h4 class="station-destination__detail">Gravity: <?php echo $destination->gravedadDestino; ?>m/s<sup>2</sup></h4>
+                    <h4 class="station-destination__detail">Average temperature: <?php echo $destination->temperaturaDestino; ?> °C</h4>
+                    <h4 class="station-destination__detail">Rotation time: <?php echo $destination->tiempoRotacionDestino; ?> terrestrial days</h4>
+                    <h4 class="station-destination__detail">Traslation time: <?php echo $destination->tiempoTraslacionDestino; ?> terrestrial days</h4>
+                    <h4 class="station-destination__detail">Distance to the Sun: <?php echo $destination->distanciaDestino; ?> ua</h4>
                 </div>
                 <div class="station-information">
 

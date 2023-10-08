@@ -21,6 +21,7 @@
     transition: 200ms ease all;
     margin: 0 .5rem;
     border-radius: 4px;
+    color: var(--font-color);
 }
 
 .carrousel-option:hover {
@@ -29,6 +30,6 @@
 }
 
 .carrousel-option__img {
-    width: 225px;
+    width: 200px;
 }
 
