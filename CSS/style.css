@@ -7,6 +7,8 @@
 @import "grid.css";
 @import "link.css";
 @import "form.css";
+@import "button.css";
+@import "modal-window.css";
 
 :root {
 
@@ -27,6 +29,15 @@
     --return-button-background-color: #d3eaff;
     --return-button-font-color: #1d5284;
 
+    /* Buttons */
+    --button-primary-color: #05192c;
+    --button-primary-color-hover: #123150;
+    --button-primary-font-color: #d3eaff;
+
+    --button-secondary-color: #d3eaff;
+    --button-secondary-color-hover: #ebf6ff;
+    --button-secondary-font-color: #05192c;
+
 }
 
 * {
@@ -39,4 +50,15 @@
 
 body {
     overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    background: var(--grid-option-background-color);
+    height: 100%;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--return-button-background-color);
+    opacity: 1;
+    border-radius: 16px;
 }

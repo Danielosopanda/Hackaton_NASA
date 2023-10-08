@@ -37,11 +37,12 @@
                 <?php 
                     while($station = $stations->fetch_object()) {
                 ?>
-                    <div class="station">
-                        
-                        <h2 class="station__name"><?php echo $station->nombreEstacion; ?></h2>
-                        <h3 class="station__description"><?php echo $station->descripcionEstacion; ?></h3>
-                    </div>  
+                    <a href="station-details.php?idStation=<?php echo $station->idEstacion; ?>" class="link">
+                        <div class="station">
+                            <h2 class="station__name"><?php echo $station->nombreEstacion; ?></h2>
+                            <h3 class="station__description"><?php echo $station->descripcionEstacion; ?></h3>
+                        </div>  
+                    </a>
                     
                 <?php 
                     }  
@@ -54,7 +55,7 @@
                 <h4 class="station-destination__detail">Gravity: <?php echo $destination->gravedadDestino; ?>m/s<sup>2</sup></h4>
                 <h4 class="station-destination__detail">Average temperature: <?php echo $destination->temperaturaDestino; ?> °C</h4>
                 <h4 class="station-destination__detail">Rotation time: <?php echo $destination->tiempoRotacionDestino; ?> terrestrial days</h4>
-                <h4 class="station-destination__detail">Traslation time: <?php echo $destination->tiempoTraslacionDestino; ?> terrestrial days</h4>
+                <h4 class="station-destination__detail">Traslation time: <?php echo number_format($destination->tiempoTraslacionDestino); ?> terrestrial days</h4>
                 <h4 class="station-destination__detail">Distance to the Sun: <?php echo $destination->distanciaDestino; ?> ua</h4>
             </div>
 
@@ -75,7 +76,7 @@
                 </div>
     
         </div>
-        <a href="javascript:history.back()" class="link link--return">Return</a>
+        <a href="javascript:history.back()" class="link link--return">Return to destinations list</a>
     </div>
 </div>
 </body>

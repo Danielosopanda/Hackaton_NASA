@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 4fr 3fr 4fr;
     gap: 1rem;
-    height: 80%;
+    height: 90%;
 }
 
 .station-list {
@@ -58,6 +58,7 @@
 
 .station-destination__img {
     width: 80%;
+    margin: 1rem 0;
 }
 
 .station-destination__name {
@@ -94,5 +95,39 @@
 .station-destination__attraction-name {
     font-size: 17px;
     font-weight: bold;
-    
+}
+
+.station-details {
+    background: var(--station-background-color);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.station-services {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--station-background-color);
+    padding: 1.5rem;
+    border-radius: 4px;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.station__detail {
+    margin-bottom: .5rem;
+}
+
+.station__detail--description {
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.station__detail--type {
+    font-weight: normal;
+}
+
+.station-service {
+    border-top: 1px solid rgba(96, 161, 222, .5);
+    padding: .75rem 0;
 }
