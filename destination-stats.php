@@ -47,4 +47,10 @@
     $edadPromedio = $conexion->query($edadPromedioQuery)->fetch_object();
 
     echo "Edad promedio de usuarios que visitan ".$destination->nombreDestino.": ".$edadPromedio->edadProm;
+
+    //Mayor indice de procedencia
+    $mayorProcedenciaQuery = "SELECT u.procedenciaUsuario, COUNT(*) numProcedentes FROM viaje v, estacion e, destino d, usuario u WHERE u.destinoActualUsuario = d.idDestino AND e.idDestino = d.idDestino AND e.idDestino = $idDestination GROUP BY u.procedenciaUsuario ORDER BY COUNT(*)  DESC LIMIT 1;";
+    $mayorProcedencia = $conexion->query($mayorProcedenciaQuery)->fetch_object();
+
+    echo "The majority of current visitors on ".$destination->nombreDestino."are: ".$mayorProcedencia->indiceEdad;
 ?>
