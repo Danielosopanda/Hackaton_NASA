@@ -23,4 +23,10 @@
     $viajesMonth = $conexion->query($numViajesMonthQuery)->fetch_object();
 
     //echo $viajesMonth->numViajes;
+
+    //Mes con mayor numero de viajeros
+    $mesMaxViajesQuery = "SELECT MONTH(v.fechaViaje) mesMasVisitas, COUNT(*) numVisitas FROM viaje v, estacion e, destino d WHERE e.idEstacion = v.idEstacion AND e.idDestino = d.idDestino AND e.idEstacion = $idStation GROUP BY MONTH(v.fechaViaje) ORDER BY COUNT(*) DESC LIMIT 1;";
+    $mesMaxViajes = $conexion->query($mesMaxViajesQuery)->fetch_object();
+
+    echo "Mes con más viajes a este destino: ".$mesMaxViajes->mesMasVisitas;
 ?>
