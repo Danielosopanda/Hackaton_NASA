@@ -59,3 +59,11 @@
 .button--confirm:hover {
     background: var(--button-primary-color-hover);
 }
+
+.button--locked {
+    background: rgb(53, 53, 53);
+}
+
+.button--locked:hover {
+    background: #7d0000;
+}

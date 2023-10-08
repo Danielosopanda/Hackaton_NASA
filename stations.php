@@ -76,7 +76,7 @@
                 </div>
     
         </div>
-        <a href="javascript:history.back()" class="link link--return">Return to destinations list</a>
+        <a href="javascript:history.back()" class="link link--return">Return to destinations</a>
     </div>
 </div>
 </body>

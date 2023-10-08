@@ -14,10 +14,26 @@
     $userQuery = "SELECT destinoActualUsuario, estacionActualUsuario, creditoUsuario FROM Usuario WHERE idUsuario = $idUser;";
     $user = $conexion->query($userQuery)->fetch_object();
     
-    $destinationQuery = "SELECT d.distanciaDestino, d.nombreDestino FROM Destino d, Estacion e WHERE d.idDestino = e.idDestino AND e.idEstacion = $idStation;";
+    $destinationQuery = "SELECT d.idDestino, d.distanciaDestino, d.nombreDestino FROM Destino d, Estacion e WHERE d.idDestino = e.idDestino AND e.idEstacion = $idStation;";
     $destination = $conexion->query($destinationQuery)->fetch_object();
     
-    $travelCost = abs($destination->distanciaDestino - $user->destinoActualUsuario) * $costPerUA;
+    $travelDistance = abs($destination->distanciaDestino - $user->destinoActualUsuario);
+    $travelCost =  0;
+    
+    if ($travelDistance == 0) {
+        $travelCost = 3000;
+    } else {
+        $travelCost = $travelDistance  * $costPerUA;
+    }
+
+    /* Submit form */
+    if (isset($_POST['submitFormBtn'])) {
+        $createTravelQuery = "INSERT INTO Viaje VALUES (NULL, NOW(), $idUser, $idStation);";
+        $updateUserQuery = "UPDATE Usuario SET creditoUsuario = (creditoUsuario - $travelCost), destinoActualUsuario = $destination->idDestino, estacionActualUsuario = '{$station->nombreEstacion}' WHERE idUsuario = $idUser;";
+        $createTravel = $conexion->query($createTravelQuery);
+        $updateUser = $conexion->query($updateUserQuery);
+        header("Location: destinations.php");
+    }
     
 ?>
 
@@ -35,7 +51,7 @@
     <!-- Background video -->
     <video id="stationBackgroundVideo" src="./Videos/Worm_Hole.mp4" class="video container__background-img container__background-img--dark" autoplay muted loop></video>
 
-    <form class="window form">
+    <form class="window form" action="#" method="POST">
         <!-- Title -->
         <h1 class="window__title"><?php echo $station->nombreEstacion; ?></h1>
 
@@ -76,12 +92,19 @@
     
         </div>
         <a href="javascript:history.back()" class="link link--return">Return to <?php echo $destination->nombreDestino; ?>'s stations</a>
+        
         <?php 
-            /* if() { */
+            /* If user has enough credits */
+            if($travelCost <= $user->creditoUsuario) {
         ?>
             <button class="button button--confirmTravel" id="confirmTravelBtn" type="button">Buy ticket for <?php echo number_format($travelCost); ?> credits</button>
         <?php 
-            /* } */
+            /* If not */
+            } else {
+        ?>
+            <button class="button button--confirmTravel button--locked" type="button">Not enough credits</button>
+        <?php 
+            }
         ?>
 
         <div class="modal-window__background">
@@ -90,7 +113,7 @@
                 <h3 class="modal-window__text">Your balance after the transaction will be <?php echo number_format($user->creditoUsuario - $travelCost); ?> credits</h3>
                 <div class="modal-window__buttons">
                     <button class="button button--cancel" type="button">Cancel</button>
-                    <button class="button button--confirm" type="submit">Confirm</button>
+                    <button id="confirmBuyBtn" class="button button--confirm" type="submit" name="submitFormBtn">Confirm</button>
                 </div>
             </div>
         </div>
