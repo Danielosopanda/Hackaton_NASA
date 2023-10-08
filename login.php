@@ -19,7 +19,7 @@
     <!-- Background video -->
     <video id="stationBackgroundVideo" src="./Videos/Space_3.mp4" class="video container__background-img container__background-img--dark" autoplay muted loop></video>
 
-    <form class="window window--login form">
+    <form class="window window--login form form--login">
         <!-- Title -->
         <h1 class="form__title">Login</h1>
 

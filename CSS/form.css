@@ -1,4 +1,4 @@
-.form {
+.form--login {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,4 +20,5 @@
     transition: 200ms ease all;
     outline: none;
     border-radius: 2px;
+    border: none;
 }
