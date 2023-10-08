@@ -24,3 +24,18 @@
 .link--return:hover {
     background: var(--button-secondary-color-hover);
 }
+
+.link--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    transition: 200ms ease all;
+    border-radius: 4px;
+    margin-right: 1rem;
+    background: var(--button-primary-color);
+}
+
+.link--icon:hover {
+    background: var(--button-primary-color-hover);
+}

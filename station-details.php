@@ -13,7 +13,7 @@
     $servicesQuery = "SELECT * FROM Servicio WHERE idEstacion = $idStation;";
     $services = $conexion->query($servicesQuery);
 
-    $userQuery = "SELECT destinoActualUsuario, estacionActualUsuario, creditoUsuario FROM Usuario WHERE idUsuario = $idUser;";
+    $userQuery = "SELECT idUsuario, nombreUsuario, destinoActualUsuario, estacionActualUsuario, creditoUsuario FROM Usuario WHERE idUsuario = $idUser;";
     $user = $conexion->query($userQuery)->fetch_object();
     
     $destinationQuery = "SELECT d.idDestino, d.distanciaDestino, d.nombreDestino FROM Destino d, Estacion e WHERE d.idDestino = e.idDestino AND e.idEstacion = $idStation;";
@@ -25,7 +25,7 @@
     if ($travelDistance == 0) {
         $travelCost = 3000;
     } else {
-        $travelCost = $travelDistance  * $costPerUA;
+        $travelCost = $travelDistance * $costPerUA;
     }
 
     /* Submit form */
@@ -45,6 +45,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Stations</title>
 </head>
 <body>
@@ -54,8 +55,25 @@
     <video id="stationBackgroundVideo" src="./Videos/Worm_Hole.mp4" class="video container__background-img container__background-img--dark" autoplay muted loop></video>
 
     <form class="window form" action="#" method="POST">
-        <!-- Title -->
-        <h1 class="window__title"><?php echo $station->nombreEstacion; ?></h1>
+
+        <!-- Header -->
+        <div class="window__header">
+            <h1 class="window__title"><?php echo $station->nombreEstacion; ?></h1>
+            <div class="profile">
+                <div class="profile__left">
+                    <a href="travel-history.php" class="link link--icon"><i class="fa-solid fa-plane-departure icon"></i></a>
+                </div>
+                <div class="profile__center">
+                    <h2 class="profile__name"><?php echo $user->nombreUsuario; ?></h2>
+                    <p class="profile__station">Current station: <?php echo $user->estacionActualUsuario; ?>, <?php echo $destination->nombreDestino; ?></p>
+                    <p class="profile__balance">Balance: <?php echo number_format($user->creditoUsuario); ?> credits</p>
+                </div>
+                <div class="profile__right">
+                    <img src="./Images/Profile_Pictures/<?php echo $user->idUsuario; ?>.jpeg" alt="Profile Picture" class="profile__img">
+                </div>
+            </div>
+        </div>
+
 
         <div class="services-container">
             

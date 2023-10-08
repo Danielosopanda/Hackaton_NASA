@@ -1,5 +1,28 @@
 .profile {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--station-background-color);
+    padding: .75rem;
+    border-radius: 4px;
+}
+
+.profile__center {
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.profile__right {
+    display: flex;
+    align-items: center;
+}
+
+.profile__name {
+    font-size: 18px;
+}
+
+.profile__img {
+    height: 70px;
+    border-radius: 4px;
+    background: var(--window-background-color);
 }

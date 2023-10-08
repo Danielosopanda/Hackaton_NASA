@@ -9,7 +9,7 @@
         $getUserQuery = "SELECT idUsuario FROM Usuario WHERE claveUsuario = '{$clave}' AND passwordUsuario = '{$password}'";
         $foundUser = $conexion->query($getUserQuery);
 
-        if ($foundUser->num_rows == 1) {
+        if ($foundUser->num_rows == 1 && !empty($clave) && !empty($password)) {
             $user = $foundUser->fetch_object();
             $_SESSION['idUser'] = $user->idUsuario;
             header('Location: destinations.php');
@@ -31,10 +31,11 @@
 <div class="container container--station">
 
     <!-- Background video -->
-    <video id="stationBackgroundVideo" src="./Videos/Space_3.mp4" class="video container__background-img container__background-img--dark" autoplay muted loop></video>
+    <video id="stationBackgroundVideo" src="./Videos/Space_1.mp4" class="video container__background-img container__background-img--dark" autoplay muted loop></video>
 
     <form class="window window--login form form--login" action="#" method="POST">
         <!-- Title -->
+        <img src="./Images/Destinations_Logos/Saturn.png" alt="" class="form__img">
         <h1 class="form__title">Login</h1>
 
         <div class="form__field">
@@ -43,7 +44,7 @@
         </div>
         <div class="form__field">
             <label for="" class="form__label">Password</label>
-            <input name="password" type="password" class="form__input">
+            <input name="password" type="password" class="form__input" maxlength="8">
         </div>
         <button name="loginBtn" class="button button--confirm button--form" type="submit">Login</button>
     </form>

@@ -9,6 +9,13 @@
     overflow: hidden;
 }
 
+.window__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+}
+
 .window__title {
     margin-bottom: 1rem;
 }
