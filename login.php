@@ -2,7 +2,10 @@
     require_once "conexion.php";
 
     if(isset($_POST['loginBtn'])) {
+        $clave = $_POST['clave'];
+        $password = $_POST['password'];
 
+        $getUserQuery = "SELECT idUsuario FROM Usuario WHERE claveUsuario = '{$clave}'";
     }
     
 ?>
@@ -27,11 +30,11 @@
 
         <div class="form__field">
             <label for="" class="form__label">Universal Population Identificator (UPI)</label>
-            <input type="text" class="form__input form__input--uppercase" maxlength=8>
+            <input name="clave" type="text" class="form__input form__input--uppercase" maxlength=8>
         </div>
         <div class="form__field">
             <label for="" class="form__label">Password</label>
-            <input type="password" class="form__input">
+            <input name="password" type="password" class="form__input">
         </div>
         <button name="loginBtn" class="button button--confirm button--form" type="submit">Login</button>
     </form>

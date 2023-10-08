@@ -32,10 +32,15 @@
             ?>
 
                 <div class="travel">
-                    <h2 class="travel__title travel__destination"><?php echo $viaje->nombreDestino; ?></h2>
-                    <h3 class="travel__text travel__station">Departure station: <?php echo $viaje->nombreEstacion; ?></h3>
-                    <h3 class="travel__text travel__date">Arrival station: <?php echo $viaje->estacionOrigenViaje; ?></h3>
-                    <h3 class="travel__text travel__date">Date: <?php echo $viaje->fechaViaje; ?></h3>
+                    <div class="travel__left">
+                        <h2 class="travel__title travel__destination"><?php echo $viaje->nombreDestino; ?></h2>
+                        <h3 class="travel__text travel__station">Departure station: <?php echo $viaje->nombreEstacion; ?></h3>
+                        <h3 class="travel__text travel__date">Arrival station: <?php echo $viaje->estacionOrigenViaje; ?></h3>
+                    </div>
+                    <div class="travel__right">
+                        <h3 class="travel__text travel__date">Date: <?php echo $viaje->fechaViaje; ?></h3>
+                        <h3 class="travel__text travel__date">Hour: <?php echo $viaje->fechaViaje; ?></h3>
+                    </div>
                 </div>  
                                     
             <?php 

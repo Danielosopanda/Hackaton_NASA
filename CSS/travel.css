@@ -1,13 +1,21 @@
 .travel-container {
     overflow-y: scroll;
     height: 100%;
+    padding-right: 1rem;
 }
 
 .travel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: var(--station-background-color);
     margin: .5rem 0;
     padding: 1rem;
     border-radius: 4px;
+}
+
+.travel__title {
+    font-size: 20px;
 }
 
 .travel__text {
