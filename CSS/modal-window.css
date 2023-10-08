@@ -1,0 +1,35 @@
+.modal-window__background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    display: none;
+}
+
+.modal-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--window-background-color);
+    height: 300px;
+    width: 25vw;
+    border-radius: 4px;
+    padding: 2rem;
+}
+
+.modal-window__title {
+    text-align: center;
+}
+
+.modal-window__text {
+text-align: center;
+}
+
+.modal-window__buttons {
+    display: grid;
+    gap: 1rem;  
+    grid-template-columns: 1fr 1fr;
+}

@@ -1,10 +1,14 @@
 .window {
     position: relative;
     background: var(--window-background-color);
-    padding: 1rem 2rem 2rem;
+    padding: 1.5rem 2rem 5rem;
     opacity: var(--window-opacity);
     width: 90vw;
     height: 90vh;
     border-radius: 4px;
     overflow: hidden;
+}
+
+.window__title {
+    margin-bottom: 1rem;
 }

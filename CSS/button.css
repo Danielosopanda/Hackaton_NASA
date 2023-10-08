@@ -1,0 +1,61 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;  
+    border-radius: 4px;
+    transition: 200ms ease background;
+}
+
+.button--confirmTravel {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+
+    background: var(--button-primary-color);
+    color: var(--button-primary-font-color);
+    
+    min-width: 300px;
+    
+    font-size: 17px;   
+}
+
+.button--confirmTravel:hover {
+    background: var(--button-primary-color-hover);
+    color: var(--button-primary-font-color-hover);
+}
+
+.button--cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--return-button-background-color);
+    color: var(--return-button-font-color);
+
+    
+    border-radius: 4px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+
+    transition: 200ms ease background;
+}
+
+.button--cancel:hover {
+    background: var(--button-secondary-color-hover);
+}
+
+.button--confirm {
+    width: 100%;
+    font-size: 16px;
+    background: var(--button-primary-color);
+    color: var(--button-primary-font-color);
+}
+
+.button--confirm:hover {
+    background: var(--button-primary-color-hover);
+}
