@@ -9,6 +9,10 @@
     WHERE d.idDestino = $idDestination AND e.idDestino = d.idDestino AND v.idEstacion = e.idEstacion;";
     $destination = $conexion->query($destinationQuery)->fetch_object();
 
-    echo $destination->nombreDestino;
+    $destinationName = $destination->nombreDestino;
+    // echo $destinationName;
 
+    $numViajesQuery = "SELECT COUNT(*) FROM viaje v, estacion e, destino d WHERE e.idEstacion = v.idEstacion AND e.idDestino = '{$destinationName}';";
+    $numViajes = $conexion->query($numViajesQuery)->fetch_object();
+    echo $numViajes;
 ?>
