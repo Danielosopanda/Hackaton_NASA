@@ -10,4 +10,11 @@
     echo $station->nombreDestino;
     echo $station->nombreEstacion;
 
+    //Numero de viajes totales a la estacion
+    $numViajesQuery = "SELECT COUNT(*) numViajes FROM viaje v, estacion e, destino d WHERE e.idEstacion = v.idEstacion AND e.idDestino = d.idDestino AND e.idEstacion = $idStation;";
+    $numViajes = $conexion->query($numViajesQuery)->fetch_object();
+
+    //Numero de viajes por año
+    $numViajesYearQuery = "SELECT COUNT(*) numViajes FROM viaje v, estacion e, destino d WHERE e.idEstacion = v.idEstacion AND e.idDestino = d.idDestino AND e.idEstacion = $idStation AND YEAR(v.fechaViaje) = YEAR(CURDATE());";
+    $viajesYear = $conexion->query($numViajesYearQuery)->fetch_object();
 ?>
