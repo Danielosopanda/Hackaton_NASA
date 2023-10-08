@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    
+
     require_once "conexion.php";
 
     $idStation = $_GET['idStation'];
@@ -30,7 +30,7 @@
 
     /* Submit form */
     if (isset($_POST['submitFormBtn'])) {
-        $createTravelQuery = "INSERT INTO Viaje VALUES (NULL, NOW(), $idUser, $idStation);";
+        $createTravelQuery = "INSERT INTO Viaje VALUES (NULL, NOW(), '{$user->estacionActualUsuario}', $idUser, $idStation);";
         $updateUserQuery = "UPDATE Usuario SET creditoUsuario = (creditoUsuario - $travelCost), destinoActualUsuario = $destination->idDestino, estacionActualUsuario = '{$station->nombreEstacion}' WHERE idUsuario = $idUser;";
         $createTravel = $conexion->query($createTravelQuery);
         $updateUser = $conexion->query($updateUserQuery);
