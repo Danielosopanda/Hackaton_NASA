@@ -2,6 +2,7 @@
     require_once "conexion.php";
 
     $idDestination = $_GET['idDestination'];
+    
     $destinationQuery = "SELECT * FROM Destino WHERE idDestino = $idDestination;";
     $destination = $conexion->query($destinationQuery)->fetch_object();
 
