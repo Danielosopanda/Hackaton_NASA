@@ -1,13 +1,13 @@
 .stations-container {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 3fr 4fr;
     gap: 1rem;
 }
 
 .station__list {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: hidden;
     height: calc(100% - 40rem);
 }
 
@@ -55,14 +55,32 @@
 }
 
 .station-destination__img {
-    width: 100%;
+    width: 80%;
 }
 
 .station-destination__name {
-    font-size: 22px;
+    font-size: 28px;
 }
 
 .station-destination__detail {
     font-size: 15px;
     font-weight: normal;
+}
+
+.station-destination__attractions {
+    background: var(--station-background-color);
+    margin-top: .5rem;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.station-destination__attraction {
+    padding: .5rem 0;
+    border-bottom: 2px solid var(--font-color);
+}
+
+.station-destination__attraction-name {
+    font-size: 17px;
+    font-weight: bold;
+    
 }

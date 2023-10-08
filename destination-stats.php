@@ -12,7 +12,8 @@
     $destinationName = $destination->nombreDestino;
     // echo $destinationName;
 
-    $numViajesQuery = "SELECT COUNT(*) FROM viaje v, estacion e, destino d WHERE e.idEstacion = v.idEstacion AND e.idDestino = '{$destinationName}';";
+    $numViajesQuery = "SELECT COUNT(*) numViajes FROM viaje v, estacion e, destino d WHERE e.idEstacion = v.idEstacion AND e.idDestino = d.idDestino AND e.idDestino = $idDestination;";
     $numViajes = $conexion->query($numViajesQuery)->fetch_object();
-    echo $numViajes;
+    
+    echo $numViajes->numViajes;
 ?>
