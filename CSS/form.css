@@ -1,0 +1,23 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+}
+
+.form__label {
+    margin-bottom: 2px;
+}
+
+.form__input {
+    padding: 4px 4px;
+    font-size: 18px;
+    transition: 200ms ease all;
+    outline: none;
+    border-radius: 2px;
+}

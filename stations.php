@@ -1,6 +1,7 @@
 <?php 
     require_once "conexion.php";
 
+    $idUser = 1;
     $idDestination = $_GET['idDestination'];
 
     $destinationQuery = "SELECT * FROM Destino WHERE idDestino = $idDestination;";
@@ -11,6 +12,9 @@
     
     $attractionsQuery = "SELECT * FROM Atraccion WHERE idDestino = $idDestination;";
     $atracciones = $conexion->query($attractionsQuery);
+    
+    $userStationQuery = "SELECT estacionActualUsuario FROM Usuario WHERE idUsuario = $idUser";
+    $userStation = $conexion->query($userStationQuery)->fetch_object();
     
 ?>
 
@@ -36,6 +40,7 @@
             <div class="station-list">
                 <?php 
                     while($station = $stations->fetch_object()) {
+                        if ($station->nombreEstacion != $userStation->estacionActualUsuario) {
                 ?>
                     <a href="station-details.php?idStation=<?php echo $station->idEstacion; ?>" class="link">
                         <div class="station">
@@ -45,7 +50,18 @@
                     </a>
                     
                 <?php 
-                    }  
+                        }  else {
+
+                ?>
+                    <button href="station-details.php?idStation=<?php echo $station->idEstacion; ?>" class="button button--locked">
+                        <div class="station station--locked">
+                            <h2 class="station__name"><?php echo $station->nombreEstacion; ?></h2>
+                            <h3 class="station__description">You are in this station</h3>
+                        </div>  
+                    </button>
+                <?php
+                        }
+                    }
                 ?>
             </div>
             

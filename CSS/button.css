@@ -67,3 +67,7 @@
 .button--locked:hover {
     background: #7d0000;
 }
+
+.button--form {
+    margin-top: 1rem;
+}

@@ -12,3 +12,9 @@
 .window__title {
     margin-bottom: 1rem;
 }
+
+.window--login {
+    width: 30vw;
+    height: auto;
+    padding-bottom: 2rem;
+}
