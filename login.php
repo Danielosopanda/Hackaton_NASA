@@ -1,11 +1,19 @@
 <?php 
+    session_start();
     require_once "conexion.php";
 
     if(isset($_POST['loginBtn'])) {
         $clave = $_POST['clave'];
         $password = $_POST['password'];
 
-        $getUserQuery = "SELECT idUsuario FROM Usuario WHERE claveUsuario = '{$clave}'";
+        $getUserQuery = "SELECT idUsuario FROM Usuario WHERE claveUsuario = '{$clave}' AND passwordUsuario = '{$password}'";
+        $foundUser = $conexion->query($getUserQuery);
+
+        if ($foundUser->num_rows == 1) {
+            $_SESSION['idUser'] = $foundUser->fetch_object()->idUser;
+            header('Location: destinations.php');
+        }
+
     }
     
 ?>

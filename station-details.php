@@ -1,8 +1,10 @@
 <?php 
+    session_start();
+    
     require_once "conexion.php";
 
     $idStation = $_GET['idStation'];
-    $idUser = 1;
+    $idUser = $_SESSION['idUser'];
     $costPerUA = 25000;
 
     $queryStation = "SELECT * FROM Estacion WHERE idEstacion = $idStation;";

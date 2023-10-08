@@ -1,8 +1,9 @@
 <?php 
+    session_start();
 
     require_once "conexion.php";
 
-    $user = 1;
+    $user = $_SESSION['idUser'];
 
     $destinationQuery = "SELECT * FROM Destino ORDER BY ordenDestino;";
     $destinations = $conexion->query($destinationQuery);

@@ -1,7 +1,9 @@
 <?php 
+    session_start();
+
     require_once "conexion.php";
 
-    $idUser = 1;
+    $idUser = $_SESSION['idUser'];
 
     $viajesQuery = "SELECT v.fechaViaje, d.nombreDestino, v.estacionOrigenViaje, e.nombreEstacion FROM Viaje v, Estacion e, destino d, usuario u WHERE e.idDestino = d.idDestino AND v.idEstacion = e.idEstacion AND u.idUsuario = v.idUsuario AND u.idUsuario = $idUser;";
     $viajes = $conexion->query($viajesQuery);

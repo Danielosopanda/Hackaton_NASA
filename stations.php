@@ -1,7 +1,9 @@
 <?php 
+    session_start();
+
     require_once "conexion.php";
 
-    $idUser = 1;
+    $idUser = $_SESSION['idUser'];
     $idDestination = $_GET['idDestination'];
 
     $destinationQuery = "SELECT * FROM Destino WHERE idDestino = $idDestination;";
