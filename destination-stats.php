@@ -15,5 +15,9 @@
     $numViajesQuery = "SELECT COUNT(*) numViajes FROM viaje v, estacion e, destino d WHERE e.idEstacion = v.idEstacion AND e.idDestino = d.idDestino AND e.idDestino = $idDestination;";
     $numViajes = $conexion->query($numViajesQuery)->fetch_object();
     
-    echo $numViajes->numViajes;
+    //echo $numViajes->numViajes;
+
+    $numViajesYearQuery = "SELECT COUNT(*) numViajes FROM viaje v, estacion e, destino d WHERE e.idEstacion = v.idEstacion AND e.idDestino = d.idDestino AND e.idDestino = $idDestination AND YEAR(v.fechaViaje) = YEAR(CURDATE());";
+    $viajesYear = $conexion->query($numViajesYearQuery)->fetch_object();
+
 ?>
