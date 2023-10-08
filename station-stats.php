@@ -33,4 +33,10 @@
     //Saldo promedio de usuario que viaja a una estacion
     $saldoPromedioQuery = "SELECT ROUND(AVG(u.creditoUsuario), 2) saldoProm FROM viaje v, estacion e, destino d, usuario u WHERE u.destinoActualUsuario = d.idDestino AND e.idDestino = d.idDestino AND e.idEstacion = $idStation  AND u.estacionActualUsuario = e.nombreEstacion;";
     $saldoPromedio = $conexion->query($saldoPromedioQuery)->fetch_object();
+
+    //Edad promedio de usuarios que se encuentran en una estacion
+    $edadPromedioQuery = "SELECT ROUND(AVG(u.edadUsuario), 0) edadProm FROM viaje v, estacion e, destino d, usuario u WHERE u.destinoActualUsuario = d.idDestino AND e.idDestino = d.idDestino AND e.idEstacion = $idStation AND u.estacionActualUsuario = e.nombreEstacion;";
+    $edadPromedio = $conexion->query($edadPromedioQuery)->fetch_object();
+
+    echo "Edad promedio de usuarios que visitan ".$destination->nombreDestino.": ".$edadPromedio->edadProm;
 ?>
