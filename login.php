@@ -10,7 +10,8 @@
         $foundUser = $conexion->query($getUserQuery);
 
         if ($foundUser->num_rows == 1) {
-            $_SESSION['idUser'] = $foundUser->fetch_object()->idUser;
+            $user = $foundUser->fetch_object();
+            $_SESSION['idUser'] = $user->idUsuario;
             header('Location: destinations.php');
         }
 
