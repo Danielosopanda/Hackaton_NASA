@@ -9,6 +9,9 @@
 
     $queryStation = "SELECT * FROM Estacion WHERE idEstacion = $idStation;";
     $station = $conexion->query($queryStation)->fetch_object();
+
+    $currentDestinationQuery = "SELECT d.nombreDestino FROM Destino d, Usuario u WHERE u.destinoActualUsuario = d.idDestino AND u.idUsuario = $idUser";
+    $currentDestination = $conexion->query($currentDestinationQuery)->fetch_object();
     
     $servicesQuery = "SELECT * FROM Servicio WHERE idEstacion = $idStation;";
     $services = $conexion->query($servicesQuery);
@@ -65,7 +68,7 @@
                 </div>
                 <div class="profile__center">
                     <h2 class="profile__name"><?php echo $user->nombreUsuario; ?></h2>
-                    <p class="profile__station">Current station: <?php echo $user->estacionActualUsuario; ?>, <?php echo $destination->nombreDestino; ?></p>
+                    <p class="profile__station">Current station: <?php echo $user->estacionActualUsuario; ?>, <?php echo $currentDestination->nombreDestino; ?></p>
                     <p class="profile__balance">Balance: <?php echo number_format($user->creditoUsuario); ?> credits</p>
                 </div>
                 <div class="profile__right">
